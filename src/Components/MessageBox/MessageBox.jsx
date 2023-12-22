@@ -15,16 +15,6 @@ function MessageBox({ messages }) {
     scrollToBottom();
   }, [messages]);
 
-  // useEffect(() => {
-  //   axios.get('URL_DE_TU_API')
-  //     .then(response => {
-  //       setMessages(response.data);
-  //     })
-  //     .catch(error => {
-  //       console.error('Error al obtener mensajes:', error);
-  //     });
-  // }, []); 
-
   return (
     <div className="message-box" ref={scrollContainerRef}    >
       {messages.map((message, index) => (
