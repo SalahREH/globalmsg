@@ -1,0 +1,45 @@
+.App-footer{
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 50px;
+    bottom: 0;
+    width: 100vw;
+    background-color: white;
+    margin-top: 40px;
+    border-top: 1.5px solid #c1c1c1;
+    padding: 23px 0;
+}
+
+.App-footer > *:first-child {
+    align-self: center;
+}
+
+.footer-section{
+    text-align: start;
+}
+
+.footer-section p{
+    font-weight: 500;
+    color: #72B5F8;
+    user-select: none;
+}
+
+.footer-section ul{
+    display: flex;
+    justify-content: start;
+    flex-direction: column;
+}
+
+.footer-section li, .footer-section a{
+    cursor: pointer;
+    text-decoration: none;
+    list-style: none;
+    color: #565656;
+}
+
+.footer-section li:hover{
+    text-decoration: underline;
+}
+
+

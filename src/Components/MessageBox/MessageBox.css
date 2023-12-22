@@ -1,0 +1,31 @@
+.message-box {
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #ccc;
+    height: 70vh;
+    width: 90vw;
+    margin: 20px 75px;
+    border-radius: 10px;
+    border: 1px solid #c4c4c4;
+    padding: 10px 25px;
+    overflow-y: auto;
+}
+
+.message-box::-webkit-scrollbar {
+    width: 0.3em;
+}
+
+.message-box::-webkit-scrollbar-thumb {
+    background-color: #ababab;
+    border-radius: 20px;
+}
+
+/* .message {
+    position: absolute;
+    margin-bottom: 10px;
+    padding: 8px;
+    background-color: #F1F8FF;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+} */

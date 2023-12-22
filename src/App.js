@@ -1,23 +1,28 @@
 import logo from './logo.svg';
 import './App.css';
+import Header from './Components/Header/Header';
+import MainPage from './Views/MainPage/MainPage';
+import Footer from './Components/Footer/Footer';
+import { RouterProvider, createBrowserRouter, useLocation } from 'react-router-dom';
+import GlobalMsg from './Views/GlobalMsg/GlobalMsg';
+import { useEffect } from 'react';
 
 function App() {
+  
+  
+
+  const router = createBrowserRouter([{
+    path: "/",
+    element: [<Header />,<MainPage />,<Footer />]
+  }, {
+    path: "/Global",
+    element: [<Header />,<GlobalMsg />]
+  },
+  ]);
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      
+      <RouterProvider router={router} />
     </div>
   );
 }

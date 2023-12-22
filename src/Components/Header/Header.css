@@ -1,0 +1,64 @@
+.App-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 20px 75px 20px 75px;
+    height: 51px;
+}
+
+.App-header img {
+    cursor: pointer;
+}
+
+.header-ul {
+    display: flex;
+    gap: 30px;
+    list-style: none;
+}
+
+.header-ul li, .header-login-area p {
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.25s;
+}
+
+.header-ul li:hover, .header-login-area p:hover {
+    color: #72B5F8;
+}
+
+.header-ul li a{
+    color: #72B5F8;
+    text-decoration: none;
+}
+
+.header-login-area {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.square-button{
+    cursor: pointer;
+    font-weight: 600;
+    padding: 10px;
+    background-color: rgb(255, 255, 255);
+    border: 1.5px solid #A1A1A1;
+    transition: all 0.3s;
+}
+
+.square-button:hover{
+    color: white;
+    background-color: #72B5F8;
+}
+
+
+@media screen and (max-width: 1220px) {
+    .header-ul{
+        display: none;
+    }
+
+    .App-header{
+        margin: auto;
+    }
+}
+
