@@ -1,5 +1,5 @@
 [
-    { "user": "DevMaster", "date": "Today at 10:00 AM", "text": "Yo, peeps! Who's on the React bug hunt? 🐞" },
+    { "user": "DevMaster", "date": "Today at 10:00 AM", "text": "Yo, peeps! Who's on the React bug hunt? 🐞", "color": "#75151E" },
     { "user": "CodeNinja", "date": "Today at 10:05 AM", "text": "Ngl, not me. Nested JSONs acting sus" },
     { "user": "Bubbl3Waffl3", "date": "Today at 10:10 AM", "text": "Hey, what's up with the React bug? Mind fillin' me in?" },
     { "user": "DevMaster", "date": "Today at 10:15 AM", "text": "React bug in 'GET /api/data' endpoint. Our code's playin' hide and seek with data" },

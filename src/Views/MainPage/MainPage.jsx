@@ -9,7 +9,8 @@ function MainPage() {
         <motion.div
             initial={{ x: "-100%" }}
             animate={{ x: "0%"}}
-            transition={{ duration: 0.1 }} className='MainPage'>
+            transition={{ duration: 0.1 }} 
+            className='MainPage'>
             <div className='MainPage-left'>
                 <div className='MainPage-title'>
                     <p>Conoce gente de todo</p>
