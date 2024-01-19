@@ -3,7 +3,7 @@ import "./MessageBox.css"
 import Message from '../Message/Message';
 // import axios from 'axios';
 
-function MessageBox({ messages }) {
+function MessageBox({ messages, currentUser }) {
   const scrollContainerRef = useRef(null);
 
   const scrollToBottom = () => {
@@ -18,7 +18,7 @@ function MessageBox({ messages }) {
   return (
     <div className="message-box" ref={scrollContainerRef}    >
       {messages.map((message, index) => (
-        <Message msg={message} i={index} />
+        <Message msg={message} i={index} currentUser={currentUser} />
       ))}
     </div>
   )

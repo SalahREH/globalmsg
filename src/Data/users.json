@@ -2,5 +2,6 @@
     {"user": "DevMaster", "email": "DevMaster@globalmsg.com", "icon": "", "color": "#75151E"},
     {"user": "CodeNinja", "email": "CodeNinja@globalmsg.com", "icon": "", "color": "#8B8C7A"},
     {"user": "BugHunter", "email": "BugHunter@globalmsg.com", "icon": "", "color": "#57A639"},
-    {"user": "Bubbl3Waffl3", "email": "Bubbl3Waffl3@globalmsg.com", "icon": "", "color": "#D183DE"}
+    {"user": "Bubbl3Waffl3", "email": "Bubbl3Waffl3@globalmsg.com", "icon": "", "color": "#D183DE"},
+    {"user": "NewDev", "email": "NewDev@globalmsg.com", "icon": "", "color": "#E55137"}
 ]

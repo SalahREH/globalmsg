@@ -29,3 +29,12 @@
     border: 1px solid #ddd;
     border-radius: 5px;
 } */
+/* 
+@media screen and (max-width: 768px) {
+    .message-box {
+        border-radius: 0;
+    }
+    .global-message-input {
+      border-radius: 0;
+    }
+  } */
