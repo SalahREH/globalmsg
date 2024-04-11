@@ -2,15 +2,19 @@ import React, { useEffect, useState } from 'react'
 
 function UserDropdown ({currentUser, setCurrentUser}) {
 
-
+    function changeCurrentUser(newUsername) {
+        setCurrentUser(newUsername);
+        localStorage.setItem('currentUser', newUsername);
+    }
+    
     function setGuestUser() {
         const randomUserId = Math.floor(Math.random() * 10000000001);
         const guestUsername = `guest${randomUserId}`;
-        localStorage.setItem('currentUser', guestUsername);
+        changeCurrentUser(guestUsername)
     }
 
     useEffect(() => {
-        if (currentUser == '') {            
+        if (currentUser == '') {   
             setGuestUser();
         } 
     }, [currentUser])
@@ -23,9 +27,8 @@ function UserDropdown ({currentUser, setCurrentUser}) {
     };
 
     const handleUsernameChange = () => {
-        setCurrentUser(newUsername);
-        localStorage.setItem('currentUser', newUsername);
-        // setNewUsername('')
+        changeCurrentUser(newUsername)
+        setNewUsername('')
         setDropdownOpen(false);
     };
 

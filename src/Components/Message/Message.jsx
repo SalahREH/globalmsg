@@ -4,11 +4,14 @@ import usersJson from "../../Data/users.json"
 import { motion } from "framer-motion"
 import optionsImg from "../../Img/options.png"
 
-function Message({ msg, i, currentUser }) {
-
+function Message({ msg, bubbleIndex, currentUser }) {
     
 
     const getUserColor = (username) => {
+        if (username.startsWith("guest")) {
+            return "#808080"
+        }
+
         const user = usersJson.find((user) => user.user === username);
         return user.color;
     };
@@ -33,7 +36,7 @@ function Message({ msg, i, currentUser }) {
                 </div>
 
                 <div className={`message-inner-${msg.user !== currentUser ? "recieve" : "send"}`}>
-                    <motion.div initial={changeXdependingOnside()} className={msg.user !== currentUser ? `message-bubble-recieve bubble-${i}` : `message-bubble-send bubble-${i}`}>{msg.content}</motion.div>
+                    <motion.div initial={changeXdependingOnside()} className={msg.user !== currentUser ? `message-bubble-recieve bubble-${bubbleIndex}` : `message-bubble-send bubble-${bubbleIndex}`}>{msg.content}</motion.div>
                     <div className="message-actions">
                         <ul className='menu'>
                             {/* <li> icono delete</li>  */}

@@ -4,6 +4,7 @@ import MessageBox from '../../Components/MessageBox/MessageBox'
 import { motion, useAnimate } from "framer-motion"
 import api from "../../Services/api";
 import UserDropdown from '../../Components/UserDropdown/UserDropdown';
+import { sendMessage, startSignalRConnection } from '../../Services/SignalRServices';
 
 function GlobalMsg() {
 
@@ -16,28 +17,26 @@ function GlobalMsg() {
   const [currentUser, setCurrentUser] = useState(localStorage.getItem('currentUser') || '');
 
   const handleSubmit = async () => {
-    try {
-      const response = await api.post({ user: "Bubbl3Waffl3", content: inputValue })
+    let msg = { user: currentUser, content: inputValue }
+    // try {
+    //   await api.post(msg)
+    // } catch (error) {
+    //   console.error('Error in POST request:', error);
+    // }
 
-    } catch (error) {
-      console.error('Error in POST request:', error);
-    }
-    // let newMsgs = messages.concat({ user: "Bubbl3Waffl3", date: "Yesterday at 9:35 PM", content: inputValue })
-    // setMessages(newMsgs)
+    sendMessage(msg)
     setInputValue('');
   };
 
   const handleKeyDown = async (event) => {
     if (event.key === 'Enter') {
       await handleSubmit();
-      await fetchData();
     }
   };
 
   const fetchData = async () => {
     try {
       const response = await api.get();
-      console.log(messages);
       setMessages(response);
     } catch (error) {
       console.error('Error obtaining data:', error);
@@ -46,11 +45,14 @@ function GlobalMsg() {
 
   useEffect(() => {
     fetchData();
+
+    startSignalRConnection((newMessage) => {
+      if (!messages.find(msg => {console.log(msg.id); return msg.id === newMessage.id})) {
+        setMessages(prevMessages => [...prevMessages, newMessage]);
+      }});
   }, [])
 
   useEffect(() => {
-
-
     const animateBubble = async (selector, options, duration) => {
       if (!scope?.current) return
       await animate(selector, options, { duration })
@@ -59,6 +61,7 @@ function GlobalMsg() {
     const animateMessages = async () => {
       await animate(scope.current, { x: "0%" }, { duration: 0.125 })
 
+      //Code for making all messages, except the first 15 messages, load at the start of the page
       // for (let i = 0; i < Math.min(15, messages.length); i++) {
       //   let index = messages.length - i - 1
       //   console.log(index);

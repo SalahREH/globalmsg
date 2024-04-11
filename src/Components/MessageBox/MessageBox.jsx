@@ -18,7 +18,7 @@ function MessageBox({ messages, currentUser }) {
   return (
     <div className="message-box" ref={scrollContainerRef}    >
       {messages.map((message, index) => (
-        <Message msg={message} i={index} currentUser={currentUser} />
+        <Message msg={message} bubbleIndex={index} currentUser={currentUser} />
       ))}
     </div>
   )
