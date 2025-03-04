@@ -3,7 +3,7 @@ import { HubConnectionBuilder } from '@microsoft/signalr';
 let connection;
 
 export function startSignalRConnection(messageReceivedCallback) {
-
+        
     connection = new HubConnectionBuilder()
         .withUrl("https://localhost:7211/chatHub")
         .build();

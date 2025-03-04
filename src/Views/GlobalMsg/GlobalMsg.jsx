@@ -3,7 +3,7 @@ import "./GlobalMsg.css"
 import MessageBox from '../../Components/MessageBox/MessageBox'
 import { motion, useAnimate } from "framer-motion"
 import api from "../../Services/api";
-import UserDropdown from '../../Components/UserDropdown/UserDropdown';
+// import UserDropdown from '../../Components/UserDropdown/UserDropdown';
 import { sendMessage, startSignalRConnection } from '../../Services/SignalRServices';
 
 function GlobalMsg() {
@@ -18,12 +18,6 @@ function GlobalMsg() {
 
   const handleSubmit = async () => {
     let msg = { user: currentUser, content: inputValue }
-    // try {
-    //   await api.post(msg)
-    // } catch (error) {
-    //   console.error('Error in POST request:', error);
-    // }
-
     sendMessage(msg)
     setInputValue('');
   };
@@ -88,7 +82,7 @@ function GlobalMsg() {
     <motion.div ref={scope}
       initial={{ x: "100%" }}
       className='GlobalMsg'>
-      <UserDropdown currentUser={currentUser} setCurrentUser={setCurrentUser} />
+      {/* <UserDropdown currentUser={currentUser} setCurrentUser={setCurrentUser} /> */}
       <MessageBox messages={messages} currentUser={currentUser}/>
       <input type="text" name="Message"
         className='global-message-input'
